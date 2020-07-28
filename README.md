@@ -20,7 +20,7 @@ ex var x = function (a, b) {return a * b;}
 Hoisting is a JavaScript mechanism where variables and function declarations are moved to the top of their scope before code execution.
 Inevitably, this means that no matter where functions and variables are declared, they are moved to the top of their scope regardless of whether their scope is global or local.
 
-ex- 
+ex 1- 
 ```
 function hoist() {
   a = 20;
@@ -41,4 +41,12 @@ Since it was declared, it is confined to the hoist() function scope.
 We can't print it out outside the confines of the hoist() function.
 Output: ReferenceError: b is not defined
 */
+```
+
+ex 2 - 
+```
+console.log(hoist); // Output: undefined
+var hoist = 'The variable has been hoisted.';
+
+//We expected the result of the log to be: ReferenceError: hoist is not defined, but instead, its output is undefined.
 ```
