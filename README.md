@@ -1,5 +1,5 @@
 # Interview_Questions_Crash_Course
 
-## [JavaScript]()
+## 1. [JavaScript](https://github.com/coolanant/Interview_Questions_Crash_Course/tree/master/01-JavaScript)
 
-## [React]()
+## 2. [React](https://github.com/coolanant/Interview_Questions_Crash_Course/tree/master/02-React)
