@@ -1,25 +1,20 @@
-### JSX
-syntax extension to JavaScript
-
-1. Specifying Attributes with JSX
+### Component & Props
 ```jsx
-<img src={user.avatarUrl}></img>;
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+
+class Welcome extends React.Component {
+  render() {
+    return <h1>Hello, {this.props.name}</h1>;
+  }
+}
+const element = <Welcome name="Sara" />;
+ReactDOM.render(
+  element,
+  document.getElementById('root')
+);
 ```
-
-2. Embedding Expressions in JSX
-```jsx
-<h1>Hello, {name}</h1>;
-```
-
-3. JSX Prevents Injection Attacks
-```jsx
-const title = response.potentiallyMaliciousInput;
-// This is safe:
-const element = <h1>{title}</h1>;
-```
-It ensures that you can never inject anything that’s not explicitly written in your application. Everything is converted to a string before being rendered. This helps prevent XSS (cross-site-scripting) attacks.
-
-
 ### State & LifeCycle
 
 <img src="lifecycle.png"/>
@@ -84,15 +79,6 @@ this.setState((state, props) => ({
   counter: state.counter + props.increment
 }));
 ```
-
-### Virtual DOM
-The virtual DOM (VDOM) is a programming concept where “virtual”, representation of a UI is kept in memory and synced with the “real” DOM by a library such as ReactDOM.
-
-What is “React Fiber”?
-Fiber is the new reconciliation engine in React 16. Its main goal is to enable incremental rendering of the virtual DOM
-
-
-
 ### Events
 ```jsx
 class Toggle extends React.Component {
@@ -128,6 +114,36 @@ class Toggle extends React.Component {
   }
 }
 ```
+
+### JSX
+syntax extension to JavaScript
+
+1. Specifying Attributes with JSX
+```jsx
+<img src={user.avatarUrl}></img>;
+```
+
+2. Embedding Expressions in JSX
+```jsx
+<h1>Hello, {name}</h1>;
+```
+
+3. JSX Prevents Injection Attacks
+```jsx
+const title = response.potentiallyMaliciousInput;
+// This is safe:
+const element = <h1>{title}</h1>;
+```
+It ensures that you can never inject anything that’s not explicitly written in your application. Everything is converted to a string before being rendered. This helps prevent XSS (cross-site-scripting) attacks.
+
+
+### Virtual DOM
+The virtual DOM (VDOM) is a programming concept where “virtual”, representation of a UI is kept in memory and synced with the “real” DOM by a library such as ReactDOM.
+
+What is “React Fiber”?
+Fiber is the new reconciliation engine in React 16. Its main goal is to enable incremental rendering of the virtual DOM
+
+SPAs (Single Page Applications) — no page reloads, no extra wait time. It is just one web page that you visit which then loads different components.
 
 ### Redux
 component -> action ->dispatches -> reduces 
