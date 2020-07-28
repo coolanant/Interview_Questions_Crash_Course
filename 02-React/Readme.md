@@ -22,6 +22,7 @@ It ensures that you can never inject anything that’s not explicitly written in
 
 ### State & LifeCycle
 
+<img src="lifecycle.png"/>
 1. ReactDOM.render()
 
 2. Converting a Function to a Class
